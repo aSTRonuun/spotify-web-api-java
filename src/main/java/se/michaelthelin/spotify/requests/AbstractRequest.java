@@ -33,7 +33,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
   protected AbstractRequest(Builder<T, ?> builder) {
     assert (builder != null);
     assert (builder.path != null);
-    assert (!builder.path.isEmpty());
+    assert (!builder.path.equals(""));
 
     this.httpManager = builder.httpManager;
 
@@ -43,7 +43,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
       .setHost(builder.host)
       .setPort(builder.port)
       .setPath(builder.path);
-    if (!builder.queryParameters.isEmpty()) {
+    if (builder.queryParameters.size() > 0) {
       uriBuilder
         .setParameters(builder.queryParameters);
     }
@@ -151,7 +151,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
         Level.FINE,
         "The httpManager returned json == null.");
       return null;
-    } else if (json.isEmpty()) {
+    } else if (json.equals("")) {
       SpotifyApi.LOGGER.log(
         Level.FINE,
         "The httpManager returned json == \"\".");
@@ -213,14 +213,14 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
 
     public BT setScheme(final String scheme) {
       assert (scheme != null);
-      assert (!scheme.isEmpty());
+      assert (!scheme.equals(""));
       this.scheme = scheme;
       return self();
     }
 
     public BT setHost(final String host) {
       assert (host != null);
-      assert (!scheme.isEmpty());
+      assert (!scheme.equals(""));
       this.host = host;
       return self();
     }
@@ -234,7 +234,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
 
     public BT setPath(final String path) {
       assert (path != null);
-      assert (!path.isEmpty());
+      assert (!path.equals(""));
 
       String builtPath = path;
 
@@ -250,7 +250,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
 
     public BT setPathParameter(final String name, final String value) {
       assert (name != null && value != null);
-      assert (!name.isEmpty() && !value.isEmpty());
+      assert (!name.equals("") && !value.equals(""));
 
       listAddOnce(this.pathParameters, new BasicNameValuePair(name, value));
       return self();
@@ -270,7 +270,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
 
     public <X> BT setQueryParameter(final String name, final X value) {
       assert (name != null);
-      assert (!name.isEmpty());
+      assert (!name.equals(""));
       assert (value != null);
       listAddOnce(this.queryParameters, new BasicNameValuePair(name, String.valueOf(value)));
       return self();
@@ -278,7 +278,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
 
     public <X> BT setHeader(final String name, final X value) {
       assert (name != null);
-      assert (!name.isEmpty());
+      assert (!name.equals(""));
       assert (value != null);
       listAddOnce(this.headers, new BasicHeader(name, String.valueOf(value)));
       return self();
@@ -297,7 +297,7 @@ public abstract class AbstractRequest<T> implements IRequest<T> {
 
     public <X> BT setBodyParameter(final String name, final X value) {
       assert (name != null);
-      assert (!name.isEmpty());
+      assert (!name.equals(""));
       assert (value != null);
       listAddOnce(this.bodyParameters, new BasicNameValuePair(name, String.valueOf(value)));
       return self();

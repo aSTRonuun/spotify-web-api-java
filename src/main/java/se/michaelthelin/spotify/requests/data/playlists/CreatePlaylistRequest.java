@@ -66,7 +66,7 @@ public class CreatePlaylistRequest extends AbstractDataRequest<Playlist> {
      */
     public Builder user_id(final String user_id) {
       assert (user_id != null);
-      assert (!user_id.isEmpty());
+      assert (!user_id.equals(""));
       return setPathParameter("user_id", user_id);
     }
 
@@ -79,7 +79,7 @@ public class CreatePlaylistRequest extends AbstractDataRequest<Playlist> {
      */
     public Builder name(final String name) {
       assert (name != null);
-      assert (!name.isEmpty());
+      assert (!name.equals(""));
       return setBodyParameter("name", name);
     }
 
@@ -117,7 +117,7 @@ public class CreatePlaylistRequest extends AbstractDataRequest<Playlist> {
      */
     public Builder description(final String description) {
       assert (description != null);
-      assert (!description.isEmpty());
+      assert (!description.equals(""));
       return setBodyParameter("description", description);
     }
 

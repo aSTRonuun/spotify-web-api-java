@@ -45,7 +45,7 @@ public class AuthorizationCodeUriRequest extends AbstractRequest<URI> {
      */
     public Builder client_id(final String client_id) {
       assert (client_id != null);
-      assert (!client_id.isEmpty());
+      assert (!client_id.equals(""));
       return setQueryParameter("client_id", client_id);
     }
 
@@ -103,7 +103,7 @@ public class AuthorizationCodeUriRequest extends AbstractRequest<URI> {
      */
     public Builder code_challenge(String code_challenge) {
       assert (code_challenge != null);
-      assert (!code_challenge.isEmpty());
+      assert (!code_challenge.equals(""));
       return setQueryParameter("code_challenge", code_challenge);
     }
 
@@ -121,7 +121,7 @@ public class AuthorizationCodeUriRequest extends AbstractRequest<URI> {
      */
     public Builder state(final String state) {
       assert (state != null);
-      assert (!state.isEmpty());
+      assert (!state.equals(""));
       return setQueryParameter("state", state);
     }
 
@@ -136,7 +136,7 @@ public class AuthorizationCodeUriRequest extends AbstractRequest<URI> {
      */
     public Builder scope(final String scope) {
       assert (scope != null);
-      assert (!scope.isEmpty());
+      assert (!scope.equals(""));
       return setQueryParameter("scope", scope);
     }
 

@@ -11,7 +11,7 @@ public abstract class AbstractDataPagingCursorbasedRequest<T> extends AbstractDa
     protected Builder(String accessToken) {
       super(accessToken);
 
-      assert (!accessToken.isEmpty());
+      assert (!accessToken.equals(""));
 
       setHeader("Authorization", "Bearer " + accessToken);
     }

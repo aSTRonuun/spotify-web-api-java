@@ -61,7 +61,7 @@ public class GetArtistsRelatedArtistsRequest extends AbstractDataRequest<Artist[
      */
     public Builder id(final String id) {
       assert (id != null);
-      assert (!id.isEmpty());
+      assert (!id.equals(""));
       return setPathParameter("id", id);
     }
 

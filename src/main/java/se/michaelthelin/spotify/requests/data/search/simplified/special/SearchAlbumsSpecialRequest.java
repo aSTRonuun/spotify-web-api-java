@@ -66,7 +66,7 @@ public class SearchAlbumsSpecialRequest extends AbstractDataRequest<Paging<Album
      */
     public Builder q(final String q) {
       assert (q != null);
-      assert (!q.isEmpty());
+      assert (!q.equals(""));
       return setQueryParameter("q", q);
     }
 

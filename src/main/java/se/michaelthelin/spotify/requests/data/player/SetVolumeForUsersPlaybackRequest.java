@@ -76,7 +76,7 @@ public class SetVolumeForUsersPlaybackRequest extends AbstractDataRequest<String
      */
     public Builder device_id(final String device_id) {
       assert (device_id != null);
-      assert (!device_id.isEmpty());
+      assert (!device_id.equals(""));
       return setQueryParameter("device_id", device_id);
     }
 

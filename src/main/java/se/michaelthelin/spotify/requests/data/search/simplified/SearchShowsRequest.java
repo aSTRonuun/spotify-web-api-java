@@ -64,7 +64,7 @@ public class SearchShowsRequest extends AbstractDataRequest<Paging<ShowSimplifie
      */
     public Builder q(final String q) {
       assert (q != null);
-      assert (!q.isEmpty());
+      assert (!q.equals(""));
       return setQueryParameter("q", q);
     }
 

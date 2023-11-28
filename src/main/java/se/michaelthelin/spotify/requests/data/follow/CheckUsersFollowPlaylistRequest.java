@@ -68,7 +68,7 @@ public class CheckUsersFollowPlaylistRequest extends AbstractDataRequest<Boolean
      */
     public Builder owner_id(final String owner_id) {
       assert (owner_id != null);
-      assert (!owner_id.isEmpty());
+      assert (!owner_id.equals(""));
       return setPathParameter("owner_id", owner_id);
     }
 
@@ -81,7 +81,7 @@ public class CheckUsersFollowPlaylistRequest extends AbstractDataRequest<Boolean
      */
     public Builder playlist_id(final String playlist_id) {
       assert (playlist_id != null);
-      assert (!playlist_id.isEmpty());
+      assert (!playlist_id.equals(""));
       return setPathParameter("playlist_id", playlist_id);
     }
 

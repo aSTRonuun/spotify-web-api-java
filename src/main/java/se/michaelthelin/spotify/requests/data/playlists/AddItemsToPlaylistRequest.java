@@ -72,7 +72,7 @@ public class AddItemsToPlaylistRequest extends AbstractDataRequest<SnapshotResul
      */
     public Builder playlist_id(final String playlist_id) {
       assert (playlist_id != null);
-      assert (!playlist_id.isEmpty());
+      assert (!playlist_id.equals(""));
       return setPathParameter("playlist_id", playlist_id);
     }
 
@@ -89,7 +89,7 @@ public class AddItemsToPlaylistRequest extends AbstractDataRequest<SnapshotResul
      */
     public Builder uris(final String uris) {
       assert (uris != null);
-      assert (!uris.isEmpty());
+      assert (!uris.equals(""));
       assert (uris.split(",").length <= 100);
       return setQueryParameter("uris", uris);
     }

@@ -61,7 +61,7 @@ public class SearchItemRequest extends AbstractDataRequest<SearchResult> {
      */
     public Builder q(final String q) {
       assert (q != null);
-      assert (!q.isEmpty());
+      assert (!q.equals(""));
       return setQueryParameter("q", q);
     }
 

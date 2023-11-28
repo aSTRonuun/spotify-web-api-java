@@ -68,7 +68,7 @@ public class AuthorizationCodeRequest extends AbstractAuthorizationRequest<Autho
      */
     public Builder code(final String code) {
       assert (code != null);
-      assert (!code.isEmpty());
+      assert (!code.equals(""));
       return setBodyParameter("code", code);
     }
 

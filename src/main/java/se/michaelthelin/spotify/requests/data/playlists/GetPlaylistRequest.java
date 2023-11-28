@@ -63,7 +63,7 @@ public class GetPlaylistRequest extends AbstractDataRequest<Playlist> {
      */
     public Builder playlist_id(final String playlist_id) {
       assert (playlist_id != null);
-      assert (!playlist_id.isEmpty());
+      assert (!playlist_id.equals(""));
       return setPathParameter("playlist_id", playlist_id);
     }
 
@@ -78,7 +78,7 @@ public class GetPlaylistRequest extends AbstractDataRequest<Playlist> {
      */
     public Builder fields(final String fields) {
       assert (fields != null);
-      assert (!fields.isEmpty());
+      assert (!fields.equals(""));
       return setQueryParameter("fields", fields);
     }
 

@@ -66,7 +66,7 @@ public class AuthorizationCodePKCERefreshRequest extends AbstractRequest<Authori
      */
     public Builder refresh_token(final String refresh_token) {
       assert (refresh_token != null);
-      assert (!refresh_token.isEmpty());
+      assert (!refresh_token.equals(""));
       return setBodyParameter("refresh_token", refresh_token);
     }
 
@@ -78,7 +78,7 @@ public class AuthorizationCodePKCERefreshRequest extends AbstractRequest<Authori
      */
     public Builder client_id(final String client_id) {
       assert (client_id != null);
-      assert (!client_id.isEmpty());
+      assert (!client_id.equals(""));
       return setBodyParameter("client_id", client_id);
     }
 
